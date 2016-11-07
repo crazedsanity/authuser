@@ -11,7 +11,7 @@ use \ErrorException;
 use \LogicException;
 
 
-class authUser extends DBSession {
+class AuthUser extends DBSession {
 	
 	/** Database connection object */
 	protected $db;

@@ -1,6 +1,6 @@
 <?php
 
-use crazedsanity\authuser\authUser;
+use crazedsanity\authuser\AuthUser;
 use crazedsanity\core\ToolBox;
 use crazedsanity\dbsession\DBSession;
 
@@ -164,7 +164,7 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 		
 		$compareOriginal = $originalUserData;
 		$compareUpdated = $updatedUserInfo;
-		$this->assertEquals(authUser::STATUS_ENABLED, $updatedUserInfo['user_status_id']);
+		$this->assertEquals(AuthUser::STATUS_ENABLED, $updatedUserInfo['user_status_id']);
 		unset($compareOriginal['passwd'], $compareUpdated['passwd']);
 		$this->assertEquals($compareOriginal, $compareUpdated);
 		
@@ -195,7 +195,7 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 	
 	
 	public function test_update_passwd_with_null() {
-		$x = new authUser($this->dbObj);
+		$x = new AuthUser($this->dbObj);
 		
 		try {
 			$this->assertFalse($x->update_passwd(array('username'=>'test'), null));
@@ -211,7 +211,7 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 	
 	
 	public function test_update_password_with_invalid_username() {
-		$x = new authUser($this->dbObj);
+		$x = new AuthUser($this->dbObj);
 		try {
 			$x->update_passwd(99999999, "");
 			$this->fail("updating password for non-existent user worked");
@@ -224,7 +224,7 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 	
 	
 	public function test_get_user_data() {
-		$x = new authUser($this->dbObj);
+		$x = new AuthUser($this->dbObj);
 		
 		$data = $x->get_user_data('test', $x::STATUS_ENABLED);
 		$this->assertTrue(is_array($data), ToolBox::debug_print($data));
@@ -266,7 +266,7 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 	
 	
 	public function test_update_user_data() {
-		$x = new authUser($this->dbObj);
+		$x = new AuthUser($this->dbObj);
 		
 		$data = $x->get_user_data('test', $x::STATUS_ENABLED);
 		
@@ -318,7 +318,7 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 	}
 }
 
-class _test_authUser extends authUser {
+class _test_authUser extends AuthUser {
 	public function __construct($db){
 		parent::__construct($db, false);
 	}
@@ -334,7 +334,7 @@ class _test_authUser extends authUser {
 	}
 }
 
-class _empty_testAuthUser extends authUser {
+class _empty_testAuthUser extends AuthUser {
 	public function __construct($db=null) {
 	}
 }
