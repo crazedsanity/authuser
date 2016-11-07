@@ -12,11 +12,14 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 		'uid'		=> 1,
 	);
 	
-	public function __construct() {
-		parent::__construct();
-	}//end __construct()
+//	public function __construct() {
+//		parent::__construct();
+//	}//end __construct()
 	
 	public function setUp() {
+		if(empty($this->type)) {
+			$this->type = 'pgsql';
+		}
 		parent::setUp();
 		$this->reset_db(dirname(__FILE__) .'/../setup/schema.pgsql.sql');
 	}
@@ -114,8 +117,14 @@ class AuthUserTest extends crazedsanity\database\TestDbAbstract {
 	}
 	
 	
+	
 	public function test_simpleAuthentication() {
 		$this->assertFalse(isset($_SESSION));
+		
+//		$this->setUp();
+		$this->type = 'pgsql';
+//		$this->setUp();
+		parent::internal_connect_db();
 		
 		$_SESSION = array();
 		$this->assertTrue(isset($_SESSION));

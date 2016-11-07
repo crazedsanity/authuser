@@ -39,5 +39,7 @@ else {
 }
 
 // set a constant for testing...
-define('UNITTEST__LOCKFILE', dirname(__FILE__) .'/files/rw/');
+if(!defined('UNITTEST__LOCKFILE')) {
+	define('UNITTEST__LOCKFILE', dirname(__FILE__) .'/files/rw/');
+}
 

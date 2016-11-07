@@ -54,16 +54,16 @@
         },
         {
             "name": "crazedsanity/database",
-            "version": "v0.4.3",
+            "version": "v0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/crazedsanity/database.git",
-                "reference": "c53d1fd51cccd670689f48b05403082f18403775"
+                "reference": "a0e8eb90041b0352a3709f89fe22d4f598502e30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/crazedsanity/database/zipball/c53d1fd51cccd670689f48b05403082f18403775",
-                "reference": "c53d1fd51cccd670689f48b05403082f18403775",
+                "url": "https://api.github.com/repos/crazedsanity/database/zipball/a0e8eb90041b0352a3709f89fe22d4f598502e30",
+                "reference": "a0e8eb90041b0352a3709f89fe22d4f598502e30",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "postgres",
                 "sqlite"
             ],
-            "time": "2016-10-14 16:40:39"
+            "time": "2016-11-07 00:26:09"
         },
         {
             "name": "crazedsanity/dbsession",
