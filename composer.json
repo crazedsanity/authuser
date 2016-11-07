@@ -1,0 +1,21 @@
+{
+    "name": "crazedsanity/authuser",
+    "description": "Library for handling user authentication",
+    "type": "library",
+    "require": {
+        "crazedsanity/database": "^0.4",
+        "ircmaxell/password-compat": "^1.0",
+        "crazedsanity/session": "^0.1.0",
+        "crazedsanity/dbsession": "^0.1.2"
+    },
+	"autoload": {
+		"classmap": ["src/"]
+	},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dan Falconer",
+            "email": "github@crazedsanity.com"
+        }
+    ]
+}
