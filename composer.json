@@ -18,8 +18,8 @@
     "require": {
         "crazedsanity/database": "^0.4",
         "ircmaxell/password-compat": "^1.0",
-        "crazedsanity/session": "^0.1.0",
-        "crazedsanity/dbsession": "^0.1.2"
+        "crazedsanity/session": "^0.1.2",
+        "crazedsanity/dbsession": "^0.1.3"
     },
 	"require-dev": {
 		"phpunit/phpunit": "^4.6 || ^5.0"
